@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    font-famiy:Arial;
+    padding:20px;
+}
+    
+<title>Online Exam</title>
+<style>
+    body{
+          font-famiy:Arial;
+    padding : 20px;
+    }
+    #timer{
+        font-size: 20px;
+        color:red;
+         }
+</style>
+</head>
+
+<body>
+
+<h1>Online Exam</h1>   
+<form>
+<p1> 1.What is HTML ?</p1><br>
+<input type="radio" name="q1"> A. Programming Language <br> 
+<input type="radio"  name="q1"> B.Markup language <br>
+<input type="radio" name="q1"> C. Database<br>
+<input type="radio" name="q1"> D. Operating system<br><br>
+
+<p2>2. Which tag is used for heading ?</p2><br>
+<input type="radio" name="q2"> A.&lt; p&gt;<br>
+<input type="radio" name="q2"> B.&lt;h1&gt;<br>
+<input type="radio" name="q2"> C.&lt;link&gt;<br>
+<input type="radio" name="q2"> D.&lt;span&sgt;<br><br>
+
+<p3>3.Which tag is used for link?</p3><br>
+<input type="radio" name="q3"> A.&lt;link&gt;<br>
+<input type="radio" name="q3"> B. &lt;agt;<br>
+<input type="radio" name="q3"> C.&lt;img;<br>
+<input type="radio" name="q3"> D.&lt;table&gt;<br><br>
+
+<button onclick="checkResult()">Submit Exam</button>
+
+</form> 
+    
+<h2 id="result"></h2>
+<script>
+let time = 60;
+let timer = setInterval(funtion() {document. getElementById("timer")}).innerText ="Time Left: " + time;
+time--
+if (time < 0) {
+    clearInterval(timer);
+    checkResult();
+}    
+},1000);
+function checkResult() {
+    let score= 0;
+    let answer = document.forms["quizForm"];
+    if (answer["q1"].value=="1") score++;
+    if (answer["q2"].value=="1")score++;
+    if (answer["q3"].value=="1")score++;
+
+    document.getElementById("result").innerText = "Your sscore: "+score+ "/3";
+
+}
+
+</script>
+</body>
+</html>
