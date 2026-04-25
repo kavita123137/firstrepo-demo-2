@@ -1,19 +1,16 @@
-# name= "kavita lodhi"
-# age= 59
-# hight=5.5
-# print("enter the name",name)
-# print("enter the age:", age)
-# print("enter the hight:", hight)
-a = 9
-b = 4
-add = a + b 
-sub = a - b 
-mul = a * b 
-mod = a % b 
-exp = a ** b 
 
-print(add) 
-print(sub) 
-print(mul) 
-print(mod) 
-print(exp)
+
+class Solution(object):
+     def twoSum(self,nums, target):
+        hashmap= {}
+        for i in range(len(nums)):
+           complement = target-nums[i]
+           if complement in hashmap:
+             return [hashmap[complement],i]
+           hashmap[nums[i]]=i
+
+nums= [2,4,5,6,7,6]
+target = 13
+obj = Solution()
+result = obj.twoSum(nums,target)
+print(result)           
